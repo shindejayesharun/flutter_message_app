@@ -68,6 +68,8 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     TextField(
                       controller: usernameController,
+                      keyboardType: TextInputType.emailAddress,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white10,
@@ -94,6 +96,10 @@ class _LoginPageState extends State<LoginPage> {
                       height: 16,
                     ),
                     TextField(
+                      controller: passwordController,
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white10,
@@ -133,12 +139,18 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: ShapeDecoration(
                     shape: const StadiumBorder(),
                     gradient: LinearGradient(
-                        colors: <Color>[Color(0xffF87056), Color(0xffD44881)]),
+                      colors: <Color>[
+                        Color(0xffF87056),
+                        Color(0xffD44881),
+                      ],
+                    ),
                   ),
                   child: FlatButton(
                     padding:
                         EdgeInsets.fromLTRB(dWidth / 4, 24, dWidth / 4, 24),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/dashboardPage');
+                    },
                     child: Text(
                       "Login".toUpperCase(),
                       style: TextStyle(color: Colors.white),
