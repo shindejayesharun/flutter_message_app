@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:message_app/dashboard/presentation/page/DashboardPage.dart';
+import 'package:message_app/dashboard/presentation/page/story.dart';
 import 'package:message_app/login/presentation/page/LoginPage.dart';
 
 void main() {
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginPage(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/dashboardPage': (context) => DashboardPage(),
+        '/storyPage': (context) => StoryPage(),
       },
     );
   }

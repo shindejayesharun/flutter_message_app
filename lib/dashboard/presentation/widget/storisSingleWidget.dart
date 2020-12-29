@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:message_app/dashboard/presentation/page/story.dart';
 
 class StorisSingleWidget extends StatefulWidget {
   final String url;
@@ -16,20 +17,25 @@ class _StorisSingleWidgetState extends State<StorisSingleWidget> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          height: 65,
-          width: 65,
-          decoration: BoxDecoration(
-              border: Border.all(
-                color: Color(0xffFF9720),
-              ),
-              borderRadius: BorderRadius.circular(10000)),
-          child: CircleAvatar(
-            radius: 10,
-            backgroundColor: Colors.transparent,
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, '/storyPage');
+          },
+          child: Container(
+            height: 65,
+            width: 65,
+            decoration: BoxDecoration(
+                border: Border.all(
+                  color: Color(0xffFF9720),
+                ),
+                borderRadius: BorderRadius.circular(10000)),
             child: CircleAvatar(
-              radius: 25,
-              backgroundImage: NetworkImage(widget.url),
+              radius: 10,
+              backgroundColor: Colors.transparent,
+              child: CircleAvatar(
+                radius: 25,
+                backgroundImage: NetworkImage(widget.url),
+              ),
             ),
           ),
         ),
